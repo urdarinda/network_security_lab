@@ -8,7 +8,9 @@ int main()
   cin>>a>>b;
   cout<<"Enter text : ";
   string st;
-  cin>>st;
+  //fflush(stdin);
+  getchar();
+  getline(cin,st);
   for(int i=0;i<st.length();i++)
    	st[i]=( a* (st[i]-'a') + b ) %26 + 'a';
   
@@ -16,7 +18,7 @@ int main()
   
   for(int i=0;i<st.length();i++)
     st[i]= inverse(a)*( st[i]-'a' -b +26) %26 +'a';
-  cout<<st;
+  cout<<"After Decryption : "<<st;
 }
 
 int inverse(int a)

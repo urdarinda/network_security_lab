@@ -7,12 +7,13 @@ int main()
 	cin>>a;
 	cout<<"enter text: ";
 	string st;
-	cin>>st;
+	getchar();
+	getline(cin,st);
 	for(int i=0;i<st.length();i++)
-		st[i]=(st[i]+a-'a')%26+'a';
+		if(st[i]!=' ') st[i]=(st[i]+a-'a')%26+'a';
 	cout<<"After encryption : " <<st<<endl;
 	for(int i=0;i<st.length();i++)
-		st[i]=(st[i]-a+26-'a')%26+'a';
+		if(st[i]!=' ') st[i]=(st[i]-a+26-'a')%26+'a';
 	cout<<"After decryption : " <<st;
 	cout<<endl;
 	return 0;
